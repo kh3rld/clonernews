@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacker News Dashboard</title>
+    <title>HackerNews</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>HackerNews Dashboard</h1>
+        <div id="liveUpdate" class="live-update" style="display: none;"></div>
+        <div>
+            <button onclick="loadStories('top')">Top Stories</button>
+            <button onclick="loadStories('new')">New Stories</button>
+            <button onclick="loadStories('best')">Best Stories</button>
+            <button onclick="loadStories('ask')">Ask HNs</button>
+            <button onclick="loadStories('show')">Show HNs</button>
+            <button onclick="loadStories('job')">Jobs</button>
+        </div>
+        <div id="stories" class="tab-content active"></div>
+        <button id="loadMore">Load More</button>
+    </div>
 </body>
 </html>
