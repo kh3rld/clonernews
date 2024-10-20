@@ -1,88 +1,122 @@
-/* clonernews styling */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #8d8b88;
-    margin: 0;
-    padding: 0;
+:root {
+  --primary-color: #ff6600;
+  --secondary-color: #f6f6ef;
+  --text-color: #333;
+  --comment-bg: #f0f0f0;
+  --border-color: #ddd;
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 {
-    color: #ff9616; 
-    font-size: 2.5em;
-    margin-bottom: 20px;
+  color: var(--primary-color);
 }
 
-button {
-    background-color: #f8a60e;
-    color: rgb(2, 2, 2);
-    font: bold;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.tab-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-button:hover {
-    background-color: #b36a12; /* Dark orange */
+.tab-button {
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-button:focus {
-    outline: none;
+.tab-button:hover,
+.tab-button.active {
+  background-color: var(--primary-color);
+  color: white;
 }
 
-.live-update {
-    background-color: #8d8b88;
-    border: 1px solid #ffa500;
-    padding: 10px;
-    margin-top: 10px;
-    display: none;
-    color: #ff4500; /* Orange red */
+.post {
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: var(--secondary-color);
 }
 
-.tab-content {
-    margin-top: 20px;
-    text-align: left;
+.post h2 {
+  margin-top: 0;
 }
 
-
-#stories {
-    background-color: #ccb592;
-    border: 1px solid #8d8b88;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.2);
-    min-height: 300px;
+.post-meta {
+  font-size: 0.9em;
+  color: #666;
 }
 
-#stories h2 {
-    color: #ff9616;
-    font-size: 1.5em;
+.upvote-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
-#stories p {
-    font-size: 1em;
-    color: #333333;
-    line-height: 1.5;
+.comment {
+  background-color: var(--comment-bg);
+  padding: 10px;
+  margin-top: 10px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.comment-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 #loadMore {
-    background-color: #f8a60e;
-    margin-top: 20px;
-    padding: 10px 30px;
-    font-size: 1em;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
-#loadMore:hover {
-    background-color: #b36a12;
+#liveUpdate {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .tab-buttons {
+    flex-wrap: wrap;
+  }
+  .tab-button {
+    flex: 1 0 30%;
+    margin-bottom: 10px;
+  }
 }
