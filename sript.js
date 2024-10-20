@@ -35,7 +35,7 @@ async function loadStories(type) {
 
 async function fetchPosts() {
     try {
-        const response = await fetch(`https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty`);
+        const response = await fetch(`https://hacker-news.firebaseio.com/v0/newstories.json`);
         const postIds = await response.json();
         const postsToLoad = postIds.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
 
@@ -51,7 +51,7 @@ async function fetchPosts() {
 }
 
 async function fetchPost(id) {
-    const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`);
+    const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);
     return response.json();
 }
 
@@ -84,7 +84,7 @@ function renderPosts(posts) {
 }
 
 async function fetchComment(id, container) {
-    const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`);
+    const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);
     const comment = await response.json();
 
     const commentElement = document.createElement('div');
