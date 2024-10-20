@@ -41,3 +41,10 @@ Clonernews is a web application that allows users to view the latest stories, jo
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## Authors
+This project is maintained by:
+
+[fnamayi](https://learn.zone01kisumu.ke/git/fnamayi)
+[doonyango](https://learn.zone01kisumu.ke/git/doonyango)
+[khahussein](https://learn.zone01kisumu.ke/git/khahussein)
