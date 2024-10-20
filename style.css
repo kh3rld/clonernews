@@ -76,3 +76,13 @@ button:focus {
     line-height: 1.5;
 }
 
+#loadMore {
+    background-color: #f8a60e;
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 1em;
+}
+
+#loadMore:hover {
+    background-color: #b36a12;
+}
