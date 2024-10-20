@@ -41,3 +41,17 @@ button:focus {
     outline: none;
 }
 
+.live-update {
+    background-color: #8d8b88;
+    border: 1px solid #ffa500;
+    padding: 10px;
+    margin-top: 10px;
+    display: none;
+    color: #ff4500; /* Orange red */
+}
+
+.tab-content {
+    margin-top: 20px;
+    text-align: left;
+}
+
