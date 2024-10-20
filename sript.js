@@ -51,11 +51,20 @@ async function fetchPosts() {
 
 // Fetch a specific post by its ID
 async function fetchPost(id) {
-  const response = await fetch(
-    `https://hacker-news.firebaseio.com/v0/item/${id}.json`
-  );
-  return response.json();
+  try {
+    const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch post: ${response.statusText}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching post:', error);
+    throw error; // Re-throwing for further handling if necessary
+  }
 }
+
 
 // Render a list of posts in the container
 function renderPosts(posts) {
