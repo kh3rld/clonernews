@@ -1,61 +1,45 @@
-Developer 1: UI Development
+# Cloner News
 
-    Set Up Project Structure
-        Create folders for components, styles, and utilities.
+## Overview
 
-    Design the User Interface
-        Sketch wireframes or mockups for posts and comments layout.
+Clonernews is a web application that allows users to view the latest stories, jobs, and comments from the HackerNews API. This dashboard features a clean and responsive UI, live updates for new stories, and interactive comment sections.
 
-    Create Post Component
-        Develop a component to display individual posts (title, author, timestamp).
-        Handle different types of posts (stories, jobs, polls).
+## Technologies Used
 
-    Create Comment Component
-        Develop a component to display individual comments.
-        Implement logic to show nested comments (if applicable).
+- **HTML**: Structure of the application.
+- **CSS**: Styling and layout using custom styles and media queries for responsiveness.
+- **JavaScript**: Functionality, including fetching data from the HackerNews API, debouncing requests, and handling dynamic content.
 
-    Render Posts and Comments
-        Implement functions to render lists of posts and comments based on the provided data.
+## Getting Started
 
-    Add Load More Functionality
-        Implement a button or infinite scroll to load more posts when needed.
+### Prerequisites
 
-    Style Components
-        Use CSS or a styling framework (like Bootstrap or Tailwind) to style the components.
+- A modern web browser (Chrome, Firefox, etc.)
+- Basic knowledge of HTML, CSS, and JavaScript.
 
-Developer 2: API Integration and Data Management
+### Installation
 
-    Set Up API Calls
-        Learn how to use fetch or Axios for making API requests.
+1. Clone the repository:
 
-    Fetch Posts from HackerNews API
-        Implement the function to retrieve posts and handle responses.
+   ```bash
+   git clone https://learn.zone01kisumu.ke/git/fnamayi/clonernews
+   ```
 
-    Store Data in State
-        Use local state management (like React’s useState or Vue's data) to manage posts and comments.
+2. Navigate to the project directory:
 
-    Fetch Comments for Each Post
-        Implement a function to retrieve comments for a specific post when requested.
+   ```bash
+   cd clonernews
+   ```
 
-    Implement Pagination Logic
-        Create logic to handle loading more posts based on user interaction.
+3. Open `index.html` in your preferred web browser.
 
-    Handle API Errors
-        Implement error handling for failed API requests.
+## Usage
 
-Developer 3: Live Updates and Optimization
+- Click on the buttons to filter stories by type (Top, New, Best, Ask HNs, Show HNs, Jobs).
+- Use the "Load More" button to fetch additional stories.
+- Click on the story title to visit the original post.
+- Toggle comments to view discussions related to each post.
 
-    Set Up Live Data Checking
-        Implement a function using setInterval to check for new posts every 5 seconds.
+## Contributing
 
-    Throttling/Debouncing API Requests
-        Implement a debounce function to limit how often API calls can be made.
-
-    Optimize State Management
-        Ensure efficient state updates to avoid unnecessary re-renders.
-
-    Integrate Live Updates with UI
-        Update the UI dynamically to reflect new posts or changes.
-
-    Implement Notifications for New Data
-        Create a simple alert or notification system to inform users of new posts.
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
