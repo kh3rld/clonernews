@@ -7,6 +7,7 @@ const pageSize = 10;
 const postsCache = {};
 let lastUpdateTime = Date.now();
 
+// Debounce function to limit how often a function can be called
 function debounce(func, delay) {
   let timeout;
   return function () {
@@ -15,6 +16,7 @@ function debounce(func, delay) {
   };
 }
 
+// Load stories based on the selected type and reset the display
 async function loadStories(type) {
   currentType = type;
   currentPage = 0;
@@ -28,6 +30,7 @@ async function loadStories(type) {
   await fetchPosts();
 }
 
+// Fetch posts from the API based on the current type and page
 async function fetchPosts() {
   try {
     const response = await fetch(
@@ -46,6 +49,7 @@ async function fetchPosts() {
   }
 }
 
+// Fetch a specific post by its ID
 async function fetchPost(id) {
   const response = await fetch(
     `https://hacker-news.firebaseio.com/v0/item/${id}.json`
@@ -53,6 +57,7 @@ async function fetchPost(id) {
   return response.json();
 }
 
+// Render a list of posts in the container
 function renderPosts(posts) {
   posts.forEach((post) => {
     const postElement = document.createElement("div");
@@ -80,6 +85,7 @@ function renderPosts(posts) {
   });
 }
 
+// Fetch comments for a specific post by its ID
 async function fetchComments(postId) {
   const post = await fetchPost(postId);
   if (post.kids) {
@@ -89,6 +95,7 @@ async function fetchComments(postId) {
   return [];
 }
 
+// Fetch a specific comment by its ID
 async function fetchComment(id) {
   const response = await fetch(
     `https://hacker-news.firebaseio.com/v0/item/${id}.json`
@@ -96,6 +103,7 @@ async function fetchComment(id) {
   return response.json();
 }
 
+// Render a list of comments in the specified container
 function renderComments(comments, container, level = 0) {
   comments.forEach((comment) => {
     if (comment.deleted) return;
@@ -115,6 +123,7 @@ function renderComments(comments, container, level = 0) {
   });
 }
 
+// Toggle visibility of comments for a specific post
 async function toggleComments(postId) {
   const commentsContainer = document.getElementById(`comments-${postId}`);
   if (commentsContainer.style.display === "none") {
@@ -128,6 +137,7 @@ async function toggleComments(postId) {
   }
 }
 
+// Toggle visibility of replies for a specific comment
 async function toggleReplies(commentId) {
   const repliesContainer = document.getElementById(`replies-${commentId}`);
   if (repliesContainer.style.display === "none") {
@@ -144,11 +154,12 @@ async function toggleReplies(commentId) {
   }
 }
 
+// Handle upvoting a post (currently just logs to console)
 function upvotePost(postId) {
   console.log(`Upvoted post ${postId}`);
-  // Here you would typically send a request to your backend to handle the upvote
 }
 
+// Check for updates to the list of stories
 function checkForUpdates() {
   fetch(`https://hacker-news.firebaseio.com/v0/${currentType}stories.json`)
     .then((response) => response.json())
@@ -163,6 +174,7 @@ function checkForUpdates() {
     });
 }
 
+// Show a notification for new stories
 function showUpdateNotification() {
   liveUpdateBanner.textContent =
     "New stories available! Refresh to see the latest.";
@@ -177,5 +189,5 @@ const debouncedFetchPosts = debounce(fetchPosts, 500);
 loadMoreButton.addEventListener("click", debouncedFetchPosts);
 
 loadStories("top");
-
+// Set interval to check for updates every 5 seconds
 setInterval(checkForUpdates, 5000);
