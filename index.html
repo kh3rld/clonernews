@@ -1,26 +1,30 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <a href="style"></a>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <title>HackerNews</title>
-</head>
-<body>
-    <div class="container">
-        <h1>HackerNews Dashboard</h1>
-        <div id="liveUpdate" class="live-update" style="display: none;"></div>
-        <div>
-            <button onclick="loadStories('top')">Top Stories</button>
-            <button onclick="loadStories('new')">New Stories</button>
-            <button onclick="loadStories('best')">Best Stories</button>
-            <button onclick="loadStories('ask')">Ask HNs</button>
-            <button onclick="loadStories('show')">Show HNs</button>
-            <button onclick="loadStories('job')">Jobs</button>
-        </div>
-        <div id="stories" class="tab-content active"></div>
-        <button id="loadMore">Load More</button>
+  </head>
+  <body>
+    <h1>HackerNews Dashboard</h1>
+    <div id="liveUpdate" style="display: none"></div>
+    <div class="tab-buttons">
+      <button class="tab-button active" onclick="loadStories('top')">
+        Top Stories
+      </button>
+      <button class="tab-button" onclick="loadStories('new')">
+        New Stories
+      </button>
+      <button class="tab-button" onclick="loadStories('best')">
+        Best Stories
+      </button>
+      <button class="tab-button" onclick="loadStories('ask')">Ask HN</button>
+      <button class="tab-button" onclick="loadStories('show')">Show HN</button>
+      <button class="tab-button" onclick="loadStories('job')">Jobs</button>
     </div>
+    <div id="stories"></div>
+    <button id="loadMore">Load More</button>
     <script src="sript.js"></script>
-</body>
-</html> 
+  </body>
+</html>
