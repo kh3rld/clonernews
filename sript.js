@@ -93,7 +93,7 @@ async function fetchComment(id, container) {
     container.appendChild(commentElement);
 }
 
-const debouncedFetchPosts = debounce(fetchPosts, 500); // 500ms delay to throttle requests
+const debouncedFetchPosts = debounce(fetchPosts, 5000); // 5000ms (5sec) delay to throttle requests
 
 loadMoreButton.addEventListener('click', debouncedFetchPosts);
 
