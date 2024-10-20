@@ -90,7 +90,7 @@ function renderPosts(posts) {
             postElement.appendChild(commentsContainer);  // Append the comments to the post
         }
 
-        postsContainer.appendChild(postElement);  // Append the post to the container
+        postsContainer.appendChild(postElement);  // App end the post to the container
     });
 }
 
