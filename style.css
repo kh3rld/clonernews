@@ -55,3 +55,24 @@ button:focus {
     text-align: left;
 }
 
+
+#stories {
+    background-color: #ccb592;
+    border: 1px solid #8d8b88;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.2);
+    min-height: 300px;
+}
+
+#stories h2 {
+    color: #ff9616;
+    font-size: 1.5em;
+}
+
+#stories p {
+    font-size: 1em;
+    color: #333333;
+    line-height: 1.5;
+}
+
