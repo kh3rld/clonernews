@@ -120,3 +120,19 @@ h1 {
     margin-bottom: 10px;
   }
 }
+
+a{
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3; /* Change color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Optional: Add a subtle effect on hover */
+a:hover {
+  transform: scale(1.05); /* Slightly enlarge link */
+}

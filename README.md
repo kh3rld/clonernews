@@ -34,12 +34,17 @@ Clonernews is a web application that allows users to view the latest stories, jo
 3. Open `index.html` in your preferred web browser.
 
 ## Usage
-
-- Click on the buttons to filter stories by type (Top, New, Best, Ask HNs, Show HNs, Jobs).
-- Use the "Load More" button to fetch additional stories.
-- Click on the story title to visit the original post.
-- Toggle comments to view discussions related to each post.
-
+* **Story Filtering:** Click on the buttons to filter stories by type (Top, New, Best, Ask HNs, Show HNs, Jobs).
+* **Load More:** Use the "Load More" button to fetch additional stories without refreshing the page.
+* **Visit Posts:** Click on any story title to navigate to the original post on Hacker News.
+* **Comment Interaction:** Toggle comments to view discussions related to each post, and expand replies as needed.
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## Authors
+This project is maintained by:
+
+[fnamayi](https://learn.zone01kisumu.ke/git/fnamayi)
+[doonyango](https://learn.zone01kisumu.ke/git/doonyango)
+[khahussein](https://learn.zone01kisumu.ke/git/khahussein)
