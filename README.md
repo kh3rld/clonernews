@@ -1,7 +1,5 @@
 # Cloner News
 
-## Overview
-
 Clonernews is a web application that allows users to view the latest stories, jobs, and comments from the HackerNews API. This dashboard features a clean and responsive UI, live updates for new stories, and interactive comment sections.
 
 ## Technologies Used
